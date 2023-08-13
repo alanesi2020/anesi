@@ -6,7 +6,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #008080; /* Change this value for your desired color */
+            background-color: #800080; /* Change this value for your desired color */
         }
 
         h1 {
@@ -32,7 +32,7 @@
             margin-top: 20px;
         }
 
-        .calculator-inputs input {
+        .calculator-inputs input, select {
             margin-right: 10px;
         }
 
@@ -41,6 +41,24 @@
             text-align: center; /* Centering the pledge text */
         }
     </style>
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('number1').value);
+            var num2 = parseFloat(document.getElementById('number2').value);
+            var operation = document.getElementById('operation').value;
+            var result;
+
+            switch(operation) {
+                case 'add': result = num1 + num2; break;
+                case 'subtract': result = num1 - num2; break;
+                case 'multiply': result = num1 * num2; break;
+                case 'divide': result = num1 / num2; break;
+                default: result = 'Invalid Operation'; break;
+            }
+
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+    </script>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
@@ -73,8 +91,9 @@
         <div id="result"></div>
     </div>
 
-    <script>
-        // JavaScript functions (calculate, previewImage, uploadImage) go here
-    </script>
+    <!-- Add other content here -->
+
+    <!-- JavaScript code for uploading and previewing images remains the same -->
+
 </body>
 </html>
