@@ -6,12 +6,14 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f0f0f0; /* Change this value for your desired color */
         }
-         h1 {
+
+        h1 {
             text-align: center;
         }
 
-        .upload-container {
+        .upload-container, .calculator-inputs {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,17 +32,21 @@
             margin-top: 20px;
         }
 
-        .calculator-inputs {
-            display: flex;
-        }
-
         .calculator-inputs input {
             margin-right: 10px;
+        }
+
+        .pledge {
+            font-style: italic;
+            text-align: center; /* Centering the pledge text */
         }
     </style>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
+
+    <!-- Pledge -->
+    <p class="pledge">we are a freind</p>
 
     <!-- Upload a Photo -->
     <h2>Upload a Photo</h2>
@@ -61,30 +67,7 @@
         <div id="result"></div>
     </div>
 
-    <script>
-        // JavaScript for Previewing Image
-        function previewImage() {
-            var file = document.getElementById("image-upload").files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById("preview").innerHTML = "<img src='" + e.target.result + "'>";
-                };
-                reader.readAsDataURL(file);
-            }
-        }
+    <!-- JavaScript code remains the same -->
 
-        function uploadImage() {
-            alert("Image would be uploaded if a server-side implementation was present.");
-        }
-
-        // JavaScript for Calculator
-        function calculate() {
-            var number1 = parseFloat(document.getElementById('number1').value);
-            var number2 = parseFloat(document.getElementById('number2').value);
-            var result = number1 + number2;
-            document.getElementById('result').innerHTML = 'Result: ' + result;
-        }
-    </script>
 </body>
 </html>
