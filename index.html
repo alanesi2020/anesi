@@ -62,14 +62,13 @@
         // JavaScript for Previewing Image
         function previewImage() {
             var file = document.getElementById("image-upload").files[0];
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var image = new Image();
-                image.src = e.target.result;
-                document.getElementById("preview").innerHTML = "";
-                document.getElementById("preview").appendChild(image);
-            };
-            reader.readAsDataURL(file);
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("preview").innerHTML = "<img src='" + e.target.result + "'>";
+                };
+                reader.readAsDataURL(file);
+            }
         }
 
         function uploadImage() {
